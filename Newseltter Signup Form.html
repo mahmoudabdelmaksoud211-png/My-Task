@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title> Newsletter Form with Validation </title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            padding-left: 24px;
+            color: gray;
+        }
+
+        form {
+            padding-left: 20px;
+        }
+
+        .you {
+            padding: 13px;
+            width: 400px;
+            border-radius: 10px;
+            background-color: gray;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .emi {
+            padding: 13px;
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+            text-align: right;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        input[type="email"]:invalid:not(:placeholder-shown)+.error-message {
+            display: inline-block;
+        }
+
+        input[type="email"]:invalid:not(:placeholder-shown) {
+            background-color: red;
+        }
+
+        .radio-label {
+            font-weight: normal;
+            display: inline-block;
+            /* margin-left: px; */
+        }
+
+        p {
+            padding-left: 22px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            /* Make image fill its container's width */
+            height: auto;
+            /* Adjust height proportionally */
+            border-radius: 10px;
+            display: block;
+            /* Remove any extra space below the image */
+        }
+
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+                max-width: 100%;
+            }
+
+            .image {
+                width: 100%;
+                /* Image takes full width on mobile */
+            }
+
+            .emi,
+            .you {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                /* Include padding and border in the element's total width and height */
+            }
+
+            .form {
+                width: 100%;
+                /* Form takes full width on mobile */
+                padding: 24px;
+                /*Add some padding to the form content */
+                box-sizing: border-box;
+                /* Include padding in the element's total width and height */
+            }
+
+            h1,
+            p,
+            form {
+                width: 100%;
+                /* padding: 0 0 0 10px; */
+                padding-left: 0;
+                /* Remove left padding to align content */
+                padding-right: 0;
+                /* Remove right padding */
+                text-align: left;
+                /* Align text to the left */
+            }
+        }
+
+        .form {
+            width: 100%;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: orange;
+        }
+
+        .w3-section {
+            text-align: center;
+        }
+
+        #ex1 {
+            margin-bottom: 15px;
+        }
+
+        #ex2 {
+            width: 50%;
+            text-align: center;
+            background-color: gray;
+            margin: 0 0 50px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="flex-container">
+        <div class="image">
+            <img src="./971.jpg" alt="Programming Image" />
+        </div>
+        <div class="form">
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <br />
+            <form id="newsletterForm">
+                <input class="custom-radio" type="checkbox" id="product" name="topic"
+                    value="Product discovery and building what matters" />
+                <label class="radio-label" for="product">Product discovery and building what matters</label><br /><br />
+                <input class="custom-radio" type="checkbox" id="measure" name="topic"
+                    value="Measuring to ensure updates are a success" />
+                <label class="radio-label" for="measure">Measuring to ensure updates are a success</label><br /><br />
+                <input class="custom-radio" type="checkbox" id="and" name="topic" value=">And much more!" />
+                <label class="radio-label" for="and">And much more!</label><br /><br /><br />
+
+
+
+
+
+
+                <label for="email" style="display: inline-block; margin-bottom: 8px;">Email address</label><br />
+                <input class="emi" type="email" id="email" name="email" placeholder="email@company.com" required />
+
+                <div class="error-message">Valid email required</div><br /><br />
+
+                <div class="w3-container-w3">
+                    <button type="button" class="you" id="ex1"
+                        onclick="document.getElementById('id01').style.display='block'">
+                        Subscribe to monthly newsletter</button>
+                </div>
+
+
+
+
+                <div id="id01" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 300px;border-radius: 10px;
+                                    height: 450px;">
+                        <div class="w3-center"><br />
+                            <span onclick="document.getElementById('id01').style.display='none'"
+                                class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">
+                                &times;
+                            </span>
+                        </div>
+
+                        <div style="color: white; font-size: 26px;margin: 0 35px;
+                                        background-color: orange; border-radius: 50%;font-weight: bold;
+                                        width: 37px;height: 37px;display: flex;align-items: center;
+                                        justify-content: center; ">
+                            &#10004;
+                        </div>
+                        <div class="container" style="padding: 0 20px 20px 20px;">
+                            <h1 style="text-align:left;">Thanks for <br> subscribing!</h1>
+                            <p style="text-align: left;">
+                                A confirmation email has been sent to
+                                <b> ash@loremcompany.com </b>Please open it and click
+                                the button inside to confirm your subscription.
+                            </p>
+                        </div>
+                        <div class="w3-section" style="text-align: center;">
+                            <button class="mess w3-button w3-block w3-greenw3-sectionw3-padding" type="button" style="display: inline-block;margin: 0 auto;padding: 10px 15px;
+                                            background: #444;color: white;border: none;cursor: pointer;
+                                            border-radius: 4px; text-align: center;position: relative;
+                                            top: -10px;" id="ex2"
+                                onclick="document.getElementById('id01').style.display='none'">
+                                Dismiss message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
